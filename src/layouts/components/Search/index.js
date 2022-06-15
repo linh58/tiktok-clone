@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import HeadlessTippy from '@tippyjs/react/headless'
 import { SearchIcon } from '~/components/Icons'
 
-import * as searchServices from '~/apiServices/searchServices'
+import * as searchServices from '~/services/searchService'
 import { Wrapper as PopperWrapper } from '~/components/Popper'
 import { useDebounce } from '~/hooks'
 import AccountItem from '../AccountItem'
@@ -52,7 +52,7 @@ function Search() {
 
     const handleChange = (e) => {
         const searchValue = e.target.value
-        if (searchValue.startsWith()) {
+        if (!searchValue.startsWith(' ')) {
             setSearchValue(searchValue)
         }
     }
